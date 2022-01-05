@@ -4,6 +4,8 @@ WORKDIR '/app'
 
 COPY package.json .
 RUN npm install --force
+RUN mkdir /app/node_modules/.cache
+RUN chmod a=rwx /app/node_modules/.cache
 
 COPY . .
 
